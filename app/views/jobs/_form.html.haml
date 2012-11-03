@@ -1,0 +1,36 @@
+= form_for @job do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :dimension_x
+    %br
+    = f.text_field :dimension_x
+  %p
+    = f.label :dimension_y
+    %br
+    = f.text_field :dimension_y
+  %p
+    = f.label :thickness
+    %br
+    = f.text_field :thickness
+  %p
+    = f.label :material
+    %br
+    = f.text_field :material
+  %p
+    = f.label :completion_date
+    %br
+    = f.date_select :completion_date
+  %p
+    = f.label :budget
+    %br
+    = f.text_field :budget
+  %p
+    = f.label :file_url
+    %br
+    = f.text_field :file_url
+  %p
+    = f.submit

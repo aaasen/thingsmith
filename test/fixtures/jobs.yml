@@ -1,0 +1,19 @@
+one:
+  name: MyString
+  dimension_x: 1.5
+  dimension_y: 1.5
+  thickness: 1.5
+  material: 
+  completion_date: 2012-11-03
+  budget: 1.5
+  file_url: MyString
+
+two:
+  name: MyString
+  dimension_x: 1.5
+  dimension_y: 1.5
+  thickness: 1.5
+  material: 
+  completion_date: 2012-11-03
+  budget: 1.5
+  file_url: MyString

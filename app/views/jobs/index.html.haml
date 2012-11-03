@@ -1,0 +1,27 @@
+- title "Jobs"
+
+%table
+  %tr
+    %th Name
+    %th Dimension x
+    %th Dimension y
+    %th Thickness
+    %th Material
+    %th Completion date
+    %th Budget
+    %th File url
+  - for job in @jobs
+    %tr
+      %td= job.name
+      %td= job.dimension_x
+      %td= job.dimension_y
+      %td= job.thickness
+      %td= job.material
+      %td= job.completion_date
+      %td= job.budget
+      %td= job.file_url
+      %td= link_to 'Show', job
+      %td= link_to 'Edit', edit_job_path(job)
+      %td= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Job", new_job_path

@@ -1,0 +1,33 @@
+- title "Job"
+
+%p
+  %strong Name:
+  = @job.name
+%p
+  %strong Dimension X:
+  = @job.dimension_x
+%p
+  %strong Dimension Y:
+  = @job.dimension_y
+%p
+  %strong Thickness:
+  = @job.thickness
+%p
+  %strong Material:
+  = @job.material
+%p
+  %strong Completion Date:
+  = @job.completion_date
+%p
+  %strong Budget:
+  = @job.budget
+%p
+  %strong File Url:
+  = @job.file_url
+
+%p
+  = link_to "Edit", edit_job_path(@job)
+  |
+  = link_to "Destroy", @job, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", jobs_path
