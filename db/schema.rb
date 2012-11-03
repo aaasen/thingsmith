@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103144653) do
+ActiveRecord::Schema.define(:version => 20121103230424) do
+
+  create_table "jobs", :force => true do |t|
+    t.string   "name"
+    t.float    "dimension_x"
+    t.float    "dimension_y"
+    t.float    "thickness"
+    t.integer  "material_id"
+    t.date     "completion_date"
+    t.float    "budget"
+    t.string   "file_url"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider",                 :null => false
