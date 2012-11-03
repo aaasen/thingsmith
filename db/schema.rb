@@ -11,38 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021223003) do
-
-  create_table "emails", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "group"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "groups", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "users_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "color"
-    t.string   "logo_url"
-    t.string   "twitter_handle"
-    t.string   "twitter_url"
-    t.string   "facebook_url"
-    t.string   "email_address"
-  end
-
-  create_table "merchants", :force => true do |t|
-    t.string   "name"
-    t.string   "logo_url"
-    t.string   "affiliate_link"
-    t.float    "percent"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121103144653) do
 
   create_table "users", :force => true do |t|
     t.string   "provider",                 :null => false
@@ -55,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20121021223003) do
     t.string   "referred_by"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
-    t.integer  "group_id"
   end
 
 end
