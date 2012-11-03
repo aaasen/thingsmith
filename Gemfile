@@ -5,8 +5,6 @@ gem 'rails', '3.2.8'
 group :development do
 	gem 'sqlite3'
 	gem 'nifty-generators'
-	gem 'sunspot_solr'
-	gem 'brakeman'
 end
 
 group :production do
@@ -37,6 +35,8 @@ gem 'jquery-rails'
 
 # gravatar images for users
 gem 'gravtastic'
+
+gem 'haml'
 
 # form error messages
 gem 'dynamic_form'
