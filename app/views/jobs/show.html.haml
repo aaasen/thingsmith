@@ -7,13 +7,3 @@
 		= link_to "make a bid &raquo;".html_safe, new_job_bid_path(@job) + '?job_id=' + @job.id.to_s()
 
 = render @job.bids
-
-%p
-	= link_to "Edit", edit_job_path(@job)
-	|
-	= link_to "Destroy", @job, :confirm => 'Are you sure?', :method => :delete
-	|
-	= link_to "View All", jobs_path
-
-
-
