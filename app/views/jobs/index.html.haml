@@ -1,2 +1,19 @@
 
+.hero-unit{ :style => 'background-image: url("/assets/hero-small.jpg");'}
+	%h2{ :style => 'font-weight: normal;' }
+		/ = image_tag '/assets/logo-large.png', :style => 'width: 256px;'
+		
+		%b
+			have a laser cutter?
+		click on jobs to make offers.
+
+		%br
+
+		%b
+			need something cut?
+		%a{ :href => new_job_path }>make a new job.
+
+%h3.center
+	jobs
+
 = render Job.all
