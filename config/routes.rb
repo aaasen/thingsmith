@@ -1,4 +1,6 @@
 Thingsmith::Application.routes.draw do
+  resources :bids
+
   resources :jobs
 
   resources :users do

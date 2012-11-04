@@ -1,0 +1,24 @@
+<% title "Bid" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @bid.user_id %>
+</p>
+<p>
+  <strong>Job:</strong>
+  <%= @bid.job_id %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%= @bid.amount %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @bid.notes %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_bid_path(@bid) %> |
+  <%= link_to "Destroy", @bid, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", bids_path %>
+</p>

@@ -1,0 +1,23 @@
+<% title "Bids" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Job</th>
+    <th>Amount</th>
+    <th>Notes</th>
+  </tr>
+  <% for bid in @bids %>
+    <tr>
+      <td><%= bid.user_id %></td>
+      <td><%= bid.job_id %></td>
+      <td><%= bid.amount %></td>
+      <td><%= bid.notes %></td>
+      <td><%= link_to "Show", bid %></td>
+      <td><%= link_to "Edit", edit_bid_path(bid) %></td>
+      <td><%= link_to "Destroy", bid, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Bid", new_bid_path %></p>

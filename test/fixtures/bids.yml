@@ -1,0 +1,11 @@
+one:
+  user_id: 1
+  job_id: 1
+  amount: 1.5
+  notes: MyString
+
+two:
+  user_id: 1
+  job_id: 1
+  amount: 1.5
+  notes: MyString
