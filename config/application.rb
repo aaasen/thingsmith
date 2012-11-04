@@ -58,5 +58,7 @@ module Thingsmith
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.filepicker_rails.api_key = "Aq97RjpMeTnK9VMXYq0FEz"
   end
 end

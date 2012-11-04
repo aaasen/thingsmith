@@ -41,6 +41,4 @@ gem 'haml'
 # form error messages
 gem 'dynamic_form'
 
-gem 'filepicker-rails'
-
 gem "mocha", :group => :test
