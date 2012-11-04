@@ -1,0 +1,20 @@
+
+.well
+	.row
+		.span2{ :style => 'text-align: center;' }
+			= image_tag user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
+			
+			%small.muted
+				%i
+		
+		.span9
+			%h4
+				= user.email
+				-if user.city
+					from
+					= user.city
+			-if user.bio
+				%h4
+					bio
+				%p
+					= user.bio

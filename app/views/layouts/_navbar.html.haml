@@ -7,10 +7,14 @@
 			%small
 				a community of makers
 		.pull-right
-			%a.bold.brand{ :href => '/auth/dailycred?action=signin' }
-				%b Login
-			%a.bold.brand{ :href => '/auth/dailycred' }
-				%b Sign Up
+			- if current_user
+				%a.bold.brand{ :href => user_path(current_user) }
+					%b My Profile
+			- else
+				%a.bold.brand{ :href => '/auth/dailycred?action=signin' }
+					%b Login
+				%a.bold.brand{ :href => '/auth/dailycred' }
+					%b Sign Up
 			%a.bold.brand{ :href => '/' }
 				%b All Jobs
 			%a.bold.brand{ :href => '/jobs/new' }

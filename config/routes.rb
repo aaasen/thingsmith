@@ -22,7 +22,7 @@ Thingsmith::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'sessions#create'
   match "/logout" => "sessions#destroy", :as => :logout
-  match "/auth" => "sessions#info", :as => :auth
+  match "/auth" => "users#show", :as => :auth
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
