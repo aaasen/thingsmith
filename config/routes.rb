@@ -1,5 +1,13 @@
 Thingsmith::Application.routes.draw do
 
+  get "users_controller/edit"
+
+  get "users_controller/show"
+
+  get "users_controller/destroy"
+
+  get "users_controller/create"
+
   resources :bids
 
   resources :jobs do

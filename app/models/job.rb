@@ -1,7 +1,7 @@
 class Job < ActiveRecord::Base
 	attr_accessible :name, :dimension_x, :dimension_y, :thickness, :material, :completion_date, :budget, :file_url
 
-	MATERIALS = { 'plywood' => 1 }
+	MATERIALS = { '1/8in Plywood' => 1, '1/4in Plywood' }
 
 	belongs_to :user
 
