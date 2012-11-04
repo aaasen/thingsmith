@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
 
   def self.create_with_omniauth(model)
     if model[:provider] == "dailycred"

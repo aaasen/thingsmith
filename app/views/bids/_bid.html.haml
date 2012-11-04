@@ -1,0 +1,12 @@
+
+.well
+	.row
+		.span2{ :style => 'text-align: center;' }
+			= image_tag User.find(bid.user_id).gravatar_url, :class => 'img-circle'
+		
+		.span9
+			%h1
+				$
+				= bid.amount
+
+			= User.find(bid.user_id).email
