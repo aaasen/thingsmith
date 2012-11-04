@@ -5,7 +5,8 @@
 .well
 	.row
 		.span2{ :style => 'text-align: center;' }
-			= image_tag @user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
+			%a{ :href => user_path(@user) }
+				= image_tag @user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
 			
 			%small.muted
 				%i

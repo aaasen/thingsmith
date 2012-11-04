@@ -10,7 +10,8 @@
 
 				%small.muted
 					by
-					= job.user.email
+					%a{ :href => user_path(job.user) }
+						= job.user.email
 
 			%p
 				%strong
