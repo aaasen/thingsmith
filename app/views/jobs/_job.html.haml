@@ -13,16 +13,22 @@
 					= job.user.email
 
 			%p
-				= job.dimension_x
-				by
-				= job.dimension_y
-				
+				%strong
+					= job.dimension_x
+				inches by
+				%strong
+					= job.dimension_y
+				inches
+
 				%br
 				
-				requested for $
-				= job.budget
+				requested for 
+				%strong
+					$
+					= job.budget
 
 				%br
 
 				must be done by 
-				= job.completion_date
+				%strong
+					= job.completion_date
