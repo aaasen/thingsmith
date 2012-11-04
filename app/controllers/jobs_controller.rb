@@ -8,7 +8,11 @@ class JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new
+    if current_user
+      @job = Job.new
+    else
+      redirect_to root_path, :notice => "Please sign in."
+    end
   end
 
   def create
@@ -20,7 +24,7 @@ class JobsController < ApplicationController
         render :action => 'new'
       end
     else
-      redirect_to home_path, :notice => "Please sign in."
+      redirect_to root_path, :notice => "Please sign in."
     end
   end
 

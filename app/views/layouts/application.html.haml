@@ -10,4 +10,10 @@
 		.container
 			= render 'layouts/navbar'
 
+			- if flash[:notice]
+				.alert{ :style => 'text-align: center;'}
+					%strong
+						Error!
+					= flash[:notice]
+
 			= yield
