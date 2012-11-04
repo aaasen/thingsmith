@@ -1,10 +1,15 @@
 Thingsmith::Application.routes.draw do
+
   resources :bids
 
-  resources :jobs
+  resources :jobs do
+    resources :bids
+  end
 
   resources :users do
-    resources :jobs
+    resources :jobs do
+      resources :bids
+    end
   end
 
   match '/auth/:provider/callback' => 'sessions#create'

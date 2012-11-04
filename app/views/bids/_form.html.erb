@@ -1,20 +1,13 @@
-<%= form_for @bid do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :job_id %><br />
-    <%= f.number_field :job_id %>
-  </p>
-  <p>
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_field :notes %>
-  </p>
-  <p><%= f.submit %></p>
+<%= form_for(@bid) do |f| %>
+	<p>
+		<%= f.label :amount %>
+		<%= f.text_field :amount %>
+	</p>
+	<p>
+		<%= f.label :notes %>
+		<%= f.text_field :notes %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
 <% end %>

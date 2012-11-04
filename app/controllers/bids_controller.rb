@@ -12,11 +12,17 @@ class BidsController < ApplicationController
   end
 
   def create
-    @bid = Bid.new(params[:bid])
-    if @bid.save
-      redirect_to @bid, :notice => "Successfully created bid."
+    if current_user
+      @job = Job.all.first
+      @bid = @job.bids.create(params[:bid])
+      @bid.user_id = current_user.id
+      if @bid.save
+        redirect_to @bid, :notice => "Successfully created bid."
+      else
+        render :action => 'new'
+      end
     else
-      render :action => 'new'
+      redirect_to home_path, :notice => "Please log in."
     end
   end
 

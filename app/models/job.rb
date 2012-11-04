@@ -4,4 +4,6 @@ class Job < ActiveRecord::Base
   MATERIALS = { 'plywood' => 1 }
 
   belongs_to :user
+
+  has_many :bids, :dependent => :destroy
 end
