@@ -9,12 +9,13 @@ class BidsController < ApplicationController
 
   def new
     @bid = Bid.new
+    @bid.job_id = params['job_id']
   end
 
   def create
     if current_user
-      @job = Job.all.first
-      @bid = @job.bids.create(params[:bid])
+      @job = Job.find(params[:bid][:job_id])
+      @bid = @job.bids.create(params[:id])
       @bid.user_id = current_user.id
       if @bid.save
         redirect_to @bid, :notice => "Successfully created bid."

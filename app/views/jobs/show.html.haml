@@ -13,5 +13,5 @@
 	|
 	= link_to "View All", jobs_path
 
-= link_to "bid", new_job_bid_path(@job)
+= link_to "bid", new_job_bid_path(@job) + '?job_id=' + @job.id.to_s()
 
