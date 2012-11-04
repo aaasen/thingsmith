@@ -22,4 +22,6 @@ class User < ActiveRecord::Base
     end
   end
 
+  has_many :jobs
+
 end

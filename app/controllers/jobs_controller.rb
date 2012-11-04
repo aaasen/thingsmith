@@ -12,11 +12,15 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(params[:job])
-    if @job.save
-      redirect_to @job, :notice => "Successfully created job."
+    if current_user
+      @job = current_user.jobs.create(params[:job])
+      if @job.save
+        redirect_to @job, :notice => "Successfully created job."
+      else
+        render :action => 'new'
+      end
     else
-      render :action => 'new'
+      redirect_to home_path, :notice => "Please sign in."
     end
   end
 
