@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
 
   has_many :jobs
 
+  attr_accessible :city, :bio
+
   validates :bio, :allow_blank => true,
     :length => { :maximum => 140 }
   validates :city, :allow_blank => true,

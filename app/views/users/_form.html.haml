@@ -1,0 +1,17 @@
+
+.row{ :style => 'text-align: center;' }
+	= form_for(@user) do |f|
+		.span4.offset4
+			= f.error_messages
+
+			%p
+				= f.label :bio, 'Miniature Bio'
+				= f.text_area :bio, :rows => 8
+			%p
+				= f.label :city, 'Which City do you Live in?'
+				= f.text_field :city
+			%p
+				Update your profile picture at
+				%a{ :href => 'http://gravatar.com/' } Gravatar
+			
+			= f.submit 'Update Profile &raquo;'.html_safe, :class => 'btn btn-primary btn-large'

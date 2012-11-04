@@ -4,8 +4,8 @@
 		.span2{ :style => 'text-align: center;' }
 			= image_tag user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
 			
-			%small.muted
-				%i
+			- if current_user and current_user == user
+				= link_to 'Edit Profile', edit_user_path(current_user), :class => 'btn'
 		
 		.span9
 			%h4
@@ -14,7 +14,5 @@
 					from
 					= user.city
 			-if user.bio
-				%h4
-					bio
 				%p
 					= user.bio
