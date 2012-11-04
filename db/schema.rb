@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104001231) do
+ActiveRecord::Schema.define(:version => 20121104002524) do
 
   create_table "jobs", :force => true do |t|
     t.string   "name"
     t.float    "dimension_x"
     t.float    "dimension_y"
-    t.float    "thickness"
     t.integer  "material_id"
     t.date     "completion_date"
     t.float    "budget"
