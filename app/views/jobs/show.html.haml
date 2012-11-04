@@ -1,14 +1,17 @@
 
 = render @job
 
+%h3.center
+	bids
+
 = render @job.bids
 
 %p
-  = link_to "Edit", edit_job_path(@job)
-  |
-  = link_to "Destroy", @job, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", jobs_path
+	= link_to "Edit", edit_job_path(@job)
+	|
+	= link_to "Destroy", @job, :confirm => 'Are you sure?', :method => :delete
+	|
+	= link_to "View All", jobs_path
 
 = link_to "bid", new_job_bid_path(@job)
 

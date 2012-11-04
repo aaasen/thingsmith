@@ -1,12 +1,24 @@
 
+- @user = User.find(bid.user_id)
+- @job = Job.find(bid.job_id)
+
 .well
 	.row
 		.span2{ :style => 'text-align: center;' }
-			= image_tag User.find(bid.user_id).gravatar_url, :class => 'img-circle'
+			= image_tag @user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
+			
+			%small.muted
+				%i
+					%a{ :href => 'mailto:' + @user.email + '?subject=' + @job.name.html_safe }
+						= @user.email
 		
 		.span9
 			%h1
 				$
 				= bid.amount
+				in
+				= bid.days
+				days
 
-			= User.find(bid.user_id).email
+			%p
+				= bid.notes
