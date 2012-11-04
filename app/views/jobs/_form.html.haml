@@ -22,6 +22,6 @@
         = f.text_field :budget
       %p
         = f.label :file_url
-        = f.filepicker_field :file_url, :options => { :button_class => 'btn' }
+        = f.filepicker_field :file_url, :options => { :button_class => 'btn', :mimetypes => "image/png,image/svg" }
       %p
         = f.submit 'Make a Bid &raquo;'.html_safe, :class => 'btn btn-primary btn-large'
