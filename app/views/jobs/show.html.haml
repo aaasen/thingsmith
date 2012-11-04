@@ -3,6 +3,8 @@
 
 %h3.center
 	bids
+	.pull-right
+		= link_to "make a bid &raquo;".html_safe, new_job_bid_path(@job) + '?job_id=' + @job.id.to_s()
 
 = render @job.bids
 
@@ -13,5 +15,5 @@
 	|
 	= link_to "View All", jobs_path
 
-= link_to "bid", new_job_bid_path(@job) + '?job_id=' + @job.id.to_s()
+
 
