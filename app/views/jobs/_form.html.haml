@@ -1,32 +1,27 @@
-= form_for @job do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.label :dimension_x
-    %br
-    = f.text_field :dimension_x
-  %p
-    = f.label :dimension_y
-    %br
-    = f.text_field :dimension_y
-  %p
-    = f.label :material
-    %br
-    = f.select(:material, Job::MATERIALS)
-  %p
-    = f.label :completion_date
-    %br
-    = f.date_select :completion_date
-  %p
-    = f.label :budget
-    %br
-    = f.text_field :budget
-  %p
-    = f.label :file_url
-    %br
-    = f.filepicker_field :file_url
-  %p
-    = f.submit
+.row{ :style => 'text-align: center;' }
+  = form_for @job do |f|
+    .span4.offset4
+      = f.error_messages
+      %p
+        = f.label :name, 'Name of your Project'
+        = f.text_field :name
+      %p
+        = f.label :dimension_x, 'Approximate Width (in inches)'
+        = f.text_field :dimension_x
+      %p
+        = f.label :dimension_y, 'Approximate Height (in inches)'
+        = f.text_field :dimension_y
+      %p
+        = f.label :material, 'Material'
+        = f.select(:material, Job::MATERIALS)
+      %p
+        = f.label :completion_date, 'Completion Date'
+        = f.date_select :completion_date
+      %p
+        = f.label :budget, 'Approximate Budget'
+        = f.text_field :budget
+      %p
+        = f.label :file_url
+        = f.filepicker_field :file_url, :options => { :button_class => 'btn' }
+      %p
+        = f.submit 'Make a Bid &raquo;'.html_safe, :class => 'btn btn-primary btn-large'

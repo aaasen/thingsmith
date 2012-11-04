@@ -2,17 +2,18 @@
 .row{ :style => 'text-align: center;' }
 	= form_for(@bid) do |f|
 		.span4.offset4
-		
+			= f.error_messages
+
 			%p
-				= f.label :amount, 'Price (USD)', :class => 'bold'
+				= f.label :amount, 'Price (USD)'
 				= f.text_field :amount
 			%p
-				= f.label :notes, 'What Makes you so Special?', :class => 'bold'
+				= f.label :notes, 'What Makes you so Special?'
 				= f.text_area :notes, :rows => 4
 			%p
-				= f.label :days, 'Days to Complete', :class => 'bold'
+				= f.label :days, 'Days to Complete'
 				= f.text_field :days
 			%p
 				= f.text_field :job_id, :placeholder => 'hello', :style => "position: absolute; top: -1000px;"
 			%p
-				= f.submit 'Make a Bid', :class => 'btn btn-primary btn-large'
+				= f.submit 'Make a Bid &raquo;'.html_safe, :class => 'btn btn-primary btn-large'
