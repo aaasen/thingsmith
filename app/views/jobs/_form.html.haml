@@ -19,7 +19,7 @@
   %p
     = f.label :material
     %br
-    = f.text_field :material
+    = f.select(:material, Job::MATERIALS)
   %p
     = f.label :completion_date
     %br
