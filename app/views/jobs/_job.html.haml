@@ -1,0 +1,28 @@
+
+.well
+	.row
+		.span2
+			%img{ :src => job.file_url, :style => 'border-radius: 5px; width: 128px; height: 128px;' }
+
+		.span9
+			%h3
+				= link_to job.name, job_path(job)
+
+				%small.muted
+					by
+					= job.user.email
+
+			%p
+				= job.dimension_x
+				by
+				= job.dimension_y
+				
+				%br
+				
+				requested for $
+				= job.budget
+
+				%br
+
+				must be done by 
+				= job.completion_date
