@@ -13,7 +13,13 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+    if params[:id]
+    	@user = User.find(params[:id])
+    elsif current_user
+      @user = current_user
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
