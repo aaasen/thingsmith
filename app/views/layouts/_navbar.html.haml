@@ -13,11 +13,11 @@
 				%a.bold.brand{ :href => dailycred_engine.logout_path }
 					%b Sign Out
 			- else
-				%a.bold.brand{ :href => '/auth/dailycred?action=signin' }
+				%a.bold.brand{ :href => login_path }
 					%b Login
-				%a.bold.brand{ :href => '/auth/dailycred' }
+				%a.bold.brand{ :href => signup_path }
 					%b Sign Up
-			%a.bold.brand{ :href => '/' }
+			%a.bold.brand{ :href => '/jobs' }
 				%b All Jobs
 			%a.bold.brand{ :href => '/jobs/new' }
 				%b New Job
