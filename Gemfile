@@ -14,7 +14,7 @@ end
 gem 'thin'
 
 # best user auth and engagement system ever!
-gem 'dailycred'
+gem 'dailycred', '~> 0.1.42'
 
 gem 'therubyracer'
 
