@@ -20,9 +20,7 @@ Thingsmith::Application.routes.draw do
     end
   end
 
-  match '/auth/:provider/callback' => 'sessions#create'
-  match "/logout" => "sessions#destroy", :as => :logout
-  match "/auth" => "users#show", :as => :auth
+  mount Dailycred::Engine => '/auth', :as => 'dailycred_engine'
 
   match 'home' => 'high_voltage/pages#show', :id => 'home'
 
