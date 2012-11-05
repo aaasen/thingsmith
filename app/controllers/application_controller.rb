@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :login_path, :dailycred, :signup_path
-  logger.info config.consider_all_requests_local
-  unless config.consider_all_requests_local && Rails.env.production?
+  helper_method :current_user
+
+  if !config.consider_all_requests_local && Rails.env.production?
     rescue_from Exception, :with => :render_error
     rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
     rescue_from ActionController::RoutingError, :with => :render_not_found
     rescue_from ActionController::UnknownController, :with => :render_not_found
-    rescue_from ActionController::UnknownAction, :with => :render_not_found
   end
 
   def render_error
@@ -27,21 +26,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authenticate
-    redirect_to auth_path unless current_user
-  end
-
-  def signup_path
-    "/auth/dailycred"
-  end
-
-  def login_path
-    "/auth/dailycred?action=signin"
-  end
-
-  def dailycred
-    config = Rails.configuration
-    @dailycred ||= Dailycred.new(config.DAILYCRED_CLIENT_ID, config.DAILYCRED_SECRET_KEY, config.dc_client_opts)
-  end
   protect_from_forgery
 end
