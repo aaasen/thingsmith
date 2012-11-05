@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :login_path, :dailycred, :signup_path
   logger.info config.consider_all_requests_local
   unless config.consider_all_requests_local && Rails.env.production?
-    logger.error "got here"
     rescue_from Exception, :with => :render_error
     rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
     rescue_from ActionController::RoutingError, :with => :render_not_found
