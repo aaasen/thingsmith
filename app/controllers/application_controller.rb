@@ -1,6 +1,16 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
 
+  def require_login
+    unless logged_in?
+      redirect_to connect_path( :identity_provider => :dailycred)
+    end
+  end
+
+  def logged_in?
+    !!current_user
+  end
+
   if !config.consider_all_requests_local && Rails.env.production?
     rescue_from Exception, :with => :render_error
     rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found

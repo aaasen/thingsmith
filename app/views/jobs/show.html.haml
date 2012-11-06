@@ -1,7 +1,7 @@
 
 = render @job
 
-%h3.center
+%h3.indent
 	bids
 	.pull-right
 		= link_to "make a bid &raquo;".html_safe, new_job_bid_path(@job) + '?job_id=' + @job.id.to_s()

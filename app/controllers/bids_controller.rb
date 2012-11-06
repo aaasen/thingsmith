@@ -1,7 +1,5 @@
 class BidsController < ApplicationController
-  def index
-    @bids = Bid.all
-  end
+  before_filter :require_login, :only => [:create, :new, :edit, :update, :destroy]
 
   def show
     @bid = Bid.find(params[:id])

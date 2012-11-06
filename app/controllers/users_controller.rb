@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :require_login, :only => [:edit, :update]
+
   def edit
   	@user = User.find(params[:id])
   end
@@ -20,11 +22,5 @@ class UsersController < ApplicationController
     else
       redirect_to root_path
     end
-  end
-
-  def destroy
-  end
-
-  def create
   end
 end
