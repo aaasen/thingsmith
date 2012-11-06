@@ -1,4 +1,7 @@
 
+- if @job.complete
+	= render :partial => 'layouts/notice', :locals => { :message => 'This job has already been completed.' }
+
 = render @job
 
 %h3.indent
