@@ -5,6 +5,6 @@ class Bid < ActiveRecord::Base
 
 	validates :amount, :presence => true
 	validates :notes, :allow_blank => true,
-		:length => { :minimum => 6, :maximum => 60 }
+		:length => { :maximum => 140 }
 	validates :days, :numericality => { :only_integer => true }
 end

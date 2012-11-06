@@ -16,7 +16,7 @@ class BidsController < ApplicationController
       @bid = @job.bids.create(params[:bid])
       @bid.user_id = current_user.id
       if @bid.save
-        redirect_to @bid, :notice => "Successfully created bid."
+        redirect_to job_path(@job), :notice => "Successfully created bid."
       else
         render :action => 'new'
       end
