@@ -13,6 +13,8 @@ Thingsmith::Application.routes.draw do
 
   resources :bids
 
+  resources :users
+
   mount Dailycred::Engine => '/auth', :as => 'dailycred_engine'
 
   match 'home' => 'high_voltage/pages#show', :id => 'home'
