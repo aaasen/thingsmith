@@ -10,12 +10,12 @@
 			- if current_user
 				%a.bold.brand{ :href => user_path(current_user) }
 					%b My Profile
-				%a.bold.brand{ :href => logout_path }
+				%a.bold.brand{ :href => dailycred_engine.logout_path }
 					%b Sign Out
 			- else
-				%a.bold.brand{ :href => login_path }
+				%a.bold.brand{ :href => '/auth/dailycred' }
 					%b Login
-				%a.bold.brand{ :href => signup_path }
+				%a.bold.brand{ :href => '/auth/dailycred' }
 					%b Sign Up
 			%a.bold.brand{ :href => '/jobs' }
 				%b All Jobs
