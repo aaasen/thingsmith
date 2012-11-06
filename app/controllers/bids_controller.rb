@@ -1,5 +1,5 @@
 class BidsController < ApplicationController
-  before_filter :require_login, :only => [:create, :new, :edit, :update, :destroy]
+  before_filter :require_login, :only => [:create, :new, :edit, :update, :destroy, :accept]
 
   def show
     @bid = Bid.find(params[:id])
@@ -42,5 +42,16 @@ class BidsController < ApplicationController
     @bid = Bid.find(params[:id])
     @bid.destroy
     redirect_to bids_url, :notice => "Successfully destroyed bid."
+  end
+
+  def accept
+    @bid = Bid.find(params[:bid_id])
+    @job = @bid.job
+
+    if @bid.update_attributes(:accepted => true) and @job.update_attributes(:complete => true)
+      redirect_to @job, :notice => "Bid accepted! Your order will be created and shipped to you soon."
+    else
+      redirect_to @job, :notice => "Failed to accept bid. Please try again."
+    end
   end
 end

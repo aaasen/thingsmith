@@ -1,24 +1,17 @@
 Thingsmith::Application.routes.draw do
 
   get "users_controller/edit"
-
   get "users_controller/show"
-
   get "users_controller/destroy"
-
   get "users_controller/create"
 
-  resources :bids
-
   resources :jobs do
-    resources :bids
-  end
-
-  resources :users do
-    resources :jobs do
-      resources :bids
+    resources :bids do
+      get 'accept'
     end
   end
+
+  resources :bids
 
   mount Dailycred::Engine => '/auth', :as => 'dailycred_engine'
 

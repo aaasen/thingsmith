@@ -7,6 +7,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @admin = (current_user and @job.user and @job.user == current_user)
   end
 
   def new
