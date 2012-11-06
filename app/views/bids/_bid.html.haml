@@ -2,27 +2,28 @@
 - @user = User.find(bid.user_id)
 - @job = Job.find(bid.job_id)
 
-.row
-	.span2{ :style => 'text-align: center;' }
-		%a{ :href => user_path(@user) }
-			= image_tag @user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
+.well
+	.row
+		.span2{ :style => 'text-align: center;' }
+			%a{ :href => user_path(@user) }
+				= image_tag @user.gravatar_url, :class => 'img-circle', :style => 'margin-bottom: 10px;'
+			
+			%small.muted
+				%i
+					%a{ :href => 'mailto:' + @user.email + '?subject=' + @job.name.html_safe }
+						= @user.email
 		
-		%small.muted
-			%i
-				%a{ :href => 'mailto:' + @user.email + '?subject=' + @job.name.html_safe }
-					= @user.email
-	
-	.span8
-		%h1
-			$
-			= bid.amount
-			in
-			= bid.days
-			days
+		.span8
+			%h1
+				$
+				= bid.amount
+				in
+				= bid.days
+				days
 
-		%p
-			= bid.notes
+			%p
+				= bid.notes
 
-	- if !@job.complete and @admin
-		.span2.center
-			= link_to 'Accept Bid', job_path(@job) + '/bids/' + bid.id.to_s() + '/accept', :class => 'btn btn-primary'
+			- if !@job.complete and @admin
+				= link_to 'Accept Bid &raquo;'.html_safe, job_path(@job) + '/bids/' + bid.id.to_s() + '/accept', :class => 'btn btn-primary'
+		
