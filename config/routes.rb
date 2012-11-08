@@ -1,5 +1,7 @@
 Thingsmith::Application.routes.draw do
 
+  resources :emails
+
   get "users_controller/edit"
   get "users_controller/show"
   get "users_controller/destroy"

@@ -1,0 +1,12 @@
+- title "New Email"
+
+= form_for @email do |f|
+  = f.error_messages
+  %p
+    = f.label :email
+    %br
+    = f.text_field :email
+  %p
+    = f.submit
+
+
