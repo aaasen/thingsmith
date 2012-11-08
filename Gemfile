@@ -43,6 +43,8 @@ gem 'haml'
 # form error messages
 gem 'dynamic_form'
 
+gem 'valid_email'
+
 gem 'filepicker-rails'
 
 gem "mocha", :group => :test
