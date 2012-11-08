@@ -1,0 +1,14 @@
+
+.hero-unit
+	%h2		
+		%b
+			have a laser cutter?
+		click on jobs to make offers.
+
+		%br
+
+		%b
+			need something cut?
+		%a{ :href => new_job_path }>make a new job.
+
+		= render :partial => 'emails/new'
