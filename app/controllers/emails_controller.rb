@@ -6,9 +6,9 @@ class EmailsController < ApplicationController
   def create
     @email = Email.new(params[:email])
     if @email.save
-      redirect_to root_url, :notice => "Successfully created email."
+      redirect_to root_url, :notice => "Congrats. We'll email " + @email.email + " with updates about ThingSmith."
     else
-      render :action => 'new'
+      redirect_to root_url, :notice => "Something went wrong. Make sure you entered a valid email and that you aren't on the list already."
     end
   end
 

@@ -1,0 +1,10 @@
+
+- @email = Email.new
+
+= form_for @email do |f|
+	= f.error_messages
+
+	.input-append
+		= f.text_field :email, :class => "span2", :size => "16", :placeholder => "email@address.com"
+		
+		= f.submit "Go!", :class => "btn btn-inverse", :style => "height: 30px;"
