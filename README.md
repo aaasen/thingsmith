@@ -1,3 +1,6 @@
+# Background
+
+Thingsmith was created for, and one first place at, CodeDay Portland: a 24 hour hackathon hosted by StudentRND. Time, not quality, was the priority. Also please note that I was just learning Rails at the time of this project.
 
 # ThingSmith
 
